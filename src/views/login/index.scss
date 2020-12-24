@@ -1,0 +1,16 @@
+.loginBg {
+  height: 100vh;
+  background-image: url(../../assets/img/login2.jpeg);
+  position: relative;
+  .login-content {
+    .login-form {
+      padding-top: 100px;
+      margin-right: 50px;
+      margin-left: auto;
+      max-width: 300px;
+      .login-form-forgot {
+        
+      }
+    }
+  }
+}
