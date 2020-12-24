@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 require('./index.scss')
 
+const layout = {
+  wrapperCol: { span: 16, offset: 4 }
+}
 const Login = () => {
   const onFinish = values => {
     console.log('Received values of form: ', values);
@@ -10,8 +13,11 @@ const Login = () => {
 
   return (
     <div className="loginBg">
+      <div className="login-header"></div>
       <div className="login-content">
+        <h2 className="login-title">用户登录</h2>
         <Form
+          { ...layout }
           name="normal_login"
           className="login-form"
           initialValues={{ remember: true }}
@@ -21,7 +27,7 @@ const Login = () => {
             name="username"
             rules={[{ required: true, message: 'Please input your Username!' }]}
           >
-            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="账号" />
           </Form.Item>
           <Form.Item
             name="password"
@@ -30,24 +36,26 @@ const Login = () => {
             <Input
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
-              placeholder="Password"
+              placeholder="密码"
             />
           </Form.Item>
           <Form.Item>
             <Form.Item name="remember" valuePropName="checked" noStyle>
-              <Checkbox>Remember me</Checkbox>
+              <Checkbox className="checkbox-style">记住密码</Checkbox>
             </Form.Item>
 
             <Link className="login-form-forgot" to="">
-              Forgot password
+              忘记密码
             </Link>
           </Form.Item>
 
-          <Form.Item>
-            <Button type="primary" htmlType="submit" className="login-form-button">
-              Log in
+          <Form.Item className="submitRow">
+            <Button type="primary" htmlType="submit">
+              登录
             </Button>
-            Or <Link to="">register now!</Link>
+            <Button type="primary" href="/register">
+              注册
+            </Button>
           </Form.Item>
         </Form>
       </div>
