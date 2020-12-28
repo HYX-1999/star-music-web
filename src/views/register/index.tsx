@@ -1,9 +1,10 @@
-import { Form, Input, Button, Checkbox } from 'antd';
-import { Link } from 'react-router-dom'
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { Form, Input, Button, InputNumber } from 'antd'
+// import { Link } from 'react-router-dom'
+import { UserOutlined, PhoneOutlined, LockOutlined } from '@ant-design/icons'
 require('./index.scss')
 
 const layout = {
+  labelCol: { offset: 4 },
   wrapperCol: { span: 16, offset: 4 }
 }
 const Register = () => {
@@ -24,14 +25,19 @@ const Register = () => {
           onFinish={onFinish}
         >
           <Form.Item
-            name="username"
-            rules={[{ required: true, message: 'Please input your Username!' }]}
+            name="nickname"
+            rules={[{ required: true, message: '请输入您的昵称!' }]}
           >
-            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="手机号码" />
+            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="昵称" />
+          </Form.Item>
+          <Form.Item
+            rules={[{ required: true, message: '请输入您的手机号码!' }]}
+          >
+            <Input prefix={<PhoneOutlined className="site-form-item-icon" />} placeholder="手机号码" />
           </Form.Item>
           <Form.Item
             name="password"
-            rules={[{ required: true, message: 'Please input your Password!' }]}
+            rules={[{ required: true, message: '请输入密码!' }]}
           >
             <Input
               prefix={<LockOutlined className="site-form-item-icon" />}
@@ -39,21 +45,16 @@ const Register = () => {
               placeholder="密码"
             />
           </Form.Item>
-          <Form.Item>
-            <Form.Item name="remember" valuePropName="checked" noStyle>
-              <Checkbox className="checkbox-style">记住密码</Checkbox>
-            </Form.Item>
-
-            <Link className="login-form-forgot" to="">
-              忘记密码
-            </Link>
+          <Form.Item
+            label="验证码"
+            rules={[{ required: true, message: '请输入验证码!' }]}
+          >
+            <InputNumber />
+            <Button>点击发送验证码</Button>
           </Form.Item>
 
           <Form.Item className="submitRow">
-            <Button type="primary" htmlType="submit">
-              登录
-            </Button>
-            <Button type="primary" href="/register">
+            <Button type="primary">
               注册
             </Button>
           </Form.Item>
