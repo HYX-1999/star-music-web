@@ -1,0 +1,36 @@
+.loginBg {
+  height: 100vh;
+  background-image: url(../../assets/img/login2.jpeg);
+  position: relative;
+  .login-header {
+    height: 200px;
+    width: 100%;
+  }
+  .login-content {
+    width: 500px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: 50px;
+    text-align: center;
+    background-color: rgb(20, 20, 20);
+    .login-title {
+      padding-top: 20px;
+      color: rgb(255, 255, 255);
+    }
+    .login-form {
+      text-align: left;
+      .checkbox-style {
+        color: rgb(255, 255, 255)
+      }
+      .login-form-forgot {
+        float: right;
+      }
+      .submitRow {
+        text-align: center;
+        Button {
+          margin: 0 20px;
+        }
+      }
+    }
+  }
+}
