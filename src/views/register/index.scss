@@ -1,18 +1,18 @@
-.loginBg {
+.regBg {
   height: 100vh;
   background-image: url(../../assets/img/login2.jpeg);
   position: relative;
-  .login-header {
-    height: 200px;
+  .reg-header {
+    height: 15vh;
     width: 100%;
   }
-  .login-content {
+  .reg-content {
     width: 600px;
     height: 480px;
     margin: 0 auto;
     text-align: center;
     background-color: rgb(255, 255, 255);
-    .login-title {
+    .reg-title {
       padding-top: 20px;
       color: rgba(0, 0, 0, 0.746);
     }

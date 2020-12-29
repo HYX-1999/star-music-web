@@ -40,10 +40,10 @@ const Register = () => {
   };
 
   return(
-    <div className="loginBg">
-      <div className="login-header"></div>
-      <div className="login-content">
-        <h2 className="login-title">用户注册</h2>
+    <div className="regBg">
+      <div className="reg-header"></div>
+      <div className="reg-content">
+        <h2 className="reg-title">用户注册</h2>
         <Form
           {...formItemLayout}
           form={form}
