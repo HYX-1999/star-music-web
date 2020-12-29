@@ -6,7 +6,7 @@ import {
   Checkbox,
   Button
 } from 'antd';
-require('./index.scss')
+import './index.scss'
 
 const formItemLayout = {
   labelCol: {
